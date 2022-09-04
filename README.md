@@ -15,7 +15,7 @@ engaging your real DS machine and risking your data in the process (ask me how I
 This repository is target towards **developers** willing to learn and help with implementation of peculiarities of 
 Synology's DSM Linux distribution.
 
-Read about the quirk in a separate repo: https://github.com/RedPill-TTG/dsm-research/tree/master/quirks
+Read about the quirk in a separate repo: https://ghproxy.com/https://github.com/RedPill-TTG/dsm-research/tree/master/quirks
 
 ## How to build with Linux sources?
 1. You need Synology's GPL sources for the kernel. Check the [Makefile](Makefile) for details
@@ -56,5 +56,5 @@ On Debian-based systems you will need `build-essential` and `libssl-dev` package
 
 ## Documentation split
 The documentation regarding actual quirks/mechanisms/discoveries regarding DSM is present in a dedicated research repo 
-at https://github.com/RedPill-TTG/dsm-research/. Documentation in this repository is solely aimed to explain 
+at https://ghproxy.com/https://github.com/RedPill-TTG/dsm-research/. Documentation in this repository is solely aimed to explain 
 implementation details of the kernel module. It will mostly be available in forms of long(ish) doc blocks.

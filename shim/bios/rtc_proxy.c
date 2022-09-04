@@ -142,7 +142,7 @@ int rtc_proxy_get_time(struct MfgCompatTime *mfgTime)
     mfgTime->year = (likely(rtc_year < 70)) ? rtc_year + 100 : rtc_year;
     mfgTime->month = normal_month_to_mfg(rtc_month);
 
-    pr_loc_inf("Time got from RTC is %4d-%02d-%02d %2d:%02d:%02d (UTC)", mfg_year_to_full(mfgTime->year),
+    pr_loc_inf("Time got from RTC is %4d-%02d-%02d %2d:%02d:%02d (UTC+8)", mfg_year_to_full(mfgTime->year),
                mfg_month_to_normal(mfgTime->month), mfgTime->day, mfgTime->hours, mfgTime->minute, mfgTime->second);
     debug_print_mfg_time(mfgTime);
 
@@ -193,7 +193,7 @@ int rtc_proxy_set_time(struct MfgCompatTime *mfgTime)
     
     write_rtc_num(rtc_year, rtc_month, mfgTime->day, mfgTime->wkday, mfgTime->hours, mfgTime->minute, mfgTime->second);
 
-    pr_loc_inf("RTC time set to %4d-%02d-%02d %2d:%02d:%02d (UTC)", mfg_year_to_full(mfgTime->year),
+    pr_loc_inf("RTC time set to %4d-%02d-%02d %2d:%02d:%02d (UTC+8)", mfg_year_to_full(mfgTime->year),
                mfg_month_to_normal(mfgTime->month), mfgTime->day, mfgTime->hours, mfgTime->minute, mfgTime->second);
 
     return 0;

@@ -32,7 +32,7 @@
 
 /********************************** Parameters related to HDIO_DRIVE_TASK ioctl call **********************************/
 //another method of calling some ioctls
-// see https://github.com/mirror/smartmontools/blob/b63206bc12efb2ae543040b9008f42c037eb1f04/os_linux.cpp#L379
+// see https://ghproxy.com/https://github.com/mirror/smartmontools/blob/b63206bc12efb2ae543040b9008f42c037eb1f04/os_linux.cpp#L379
 // also see HDIO_DRIVE_TASK in https://www.kernel.org/doc/Documentation/ioctl/hdio.txt
 #define HDIO_DRIVE_TASK_HDR_OFFSET 7
 #define HDIO_DRIVE_TASK_HDR_CMD 0 //command code

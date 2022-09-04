@@ -75,7 +75,7 @@
  *  - https://www.micron.com/-/media/client/global/documents/products/technical-note/solid-state-storage/tnfd10_p400e_smart_firmware_0142.pdf
  *  - https://hddguru.com/documentation/2006.01.27-ATA-ATAPI-6/ (the official ATA/ATAPI-6 specs)
  *  - https://www.kernel.org/doc/Documentation/ioctl/hdio.txt (HDIO_* ioctls summary from Linux)
- *  - https://github.com/qemu/qemu/blob/266469947161aa10b1d36843580d369d5aa38589/hw/ide/core.c#L1826 (qemu SMART)
+ *  - https://ghproxy.com/https://github.com/qemu/qemu/blob/266469947161aa10b1d36843580d369d5aa38589/hw/ide/core.c#L1826 (qemu SMART)
  */
 #include "smart_shim.h"
 #include "../shim_base.h"
@@ -734,7 +734,7 @@ static int __always_inline handle_ata_task_smart(const u8 *req_header, void __us
             // means that SMART is OK. However, two static values of 0x4f/0xc2 are used for OK. Here we're taking the
             // easy (and probably safer) approach by returning the same values.
             //Smartmontools actually verifies if it's the same as req header as well:
-            // https://github.com/mirror/smartmontools/blob/b63206bc12efb2ae543040b9008f42c037eb1f04/os_linux.cpp#L405
+            // https://ghproxy.com/https://github.com/mirror/smartmontools/blob/b63206bc12efb2ae543040b9008f42c037eb1f04/os_linux.cpp#L405
             u8 rsp_header[HDIO_DRIVE_TASK_HDR_OFFSET] = {
                 [HDIO_DRIVE_TASK_RET_STATUS]  = 0x00,
                 [HDIO_DRIVE_TASK_RET_ERROR]   = 0x00,
@@ -765,7 +765,7 @@ static int __always_inline handle_ata_task_smart(const u8 *req_header, void __us
  * then routed to individual shims. If a given ioctl() is not a one which we're interested in altering the result of a
  * real ioctl() call to the driver will be returned unaltered.
  * This function is used to a very limited subset of commands in the normal circumstances, as see in the smartmontools
- * code: https://github.com/mirror/smartmontools/blob/b63206bc12efb2ae543040b9008f42c037eb1f04/os_linux.cpp#L379
+ * code: https://ghproxy.com/https://github.com/mirror/smartmontools/blob/b63206bc12efb2ae543040b9008f42c037eb1f04/os_linux.cpp#L379
  *
  * To fully understand this function make sure to read HDIO_DRIVE_TASK description provided by kernel developers at
  * https://www.kernel.org/doc/Documentation/ioctl/hdio.txt
